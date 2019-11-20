@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+// import Foot from './footer.js'
+// import Head from './header.js'
+// import Body from './body.js'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  constructor() {
+    super()
+    
+    this.state = {
+      user: "in"  
+    }
+  }
+
+
+    render() {
+      if(this.state.user==="in"){
+        return (<h1>The user is logged {this.state.user}</h1>);
+      } else {
+        return (<h1>The user is logged {this.state.user}</h1>);
+      }
+  }
 }
 
 export default App;
