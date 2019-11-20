@@ -1,25 +1,29 @@
 import React, {Component} from 'react';
-// import Foot from './footer.js'
-// import Head from './header.js'
-// import Body from './body.js'
+
 
 
 class App extends Component {
   constructor() {
     super()
-    
     this.state = {
-      user: "in"  
+      count : 0  
     }
+    this.newCount = this.newCount.bind(this)
   }
 
+  newCount() {
+    this.setState(prevState => 
+      {return {
+        count: prevState.count + 1}}
+      ) 
+    
+  }
 
     render() {
-      if(this.state.user==="in"){
-        return (<h1>The user is logged {this.state.user}</h1>);
-      } else {
-        return (<h1>The user is logged {this.state.user}</h1>);
-      }
+      return <div>
+        <h1>{this.state.count}</h1>
+        <button onClick={this.newCount}>Count</button>
+      </div>
   }
 }
 
