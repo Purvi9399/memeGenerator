@@ -1,30 +1,14 @@
-import React, {Component} from 'react';
+import React from "react"
+import MemeGenerator from "./MemeGenerator"
+import Header from "./Header"
 
-
-
-class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      count : 0  
-    }
-    this.newCount = this.newCount.bind(this)
-  }
-
-  newCount() {
-    this.setState(prevState => 
-      {return {
-        count: prevState.count + 1}}
-      ) 
-    
-  }
-
-    render() {
-      return <div>
-        <h1>{this.state.count}</h1>
-        <button onClick={this.newCount}>Count</button>
-      </div>
-  }
+function App() {
+  return(
+    <div>
+      <Header/>
+      <MemeGenerator/>
+    </div>
+  )
 }
 
 export default App;
